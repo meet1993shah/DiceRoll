@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Cube Rotation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Form for selecting number of cubes -->
+        <div class="controls">
+            <label for="numCubes">Number of Cubes:</label>
+            <input type="number" id="numCubes" min="1" max="6" value="1">
+            <button id="rotateBtn">Rotate</button>
+        </div>
+
+        <!-- Container to hold the cubes -->
+        <div id="cubeContainer" class="cube-container">
+            <!-- Cubes will be dynamically added here -->
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

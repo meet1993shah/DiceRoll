@@ -1,0 +1,143 @@
+/* General Page Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    background-color: #222;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding-top: 20px;
+}
+
+/* Controls Section - Moved to Top */
+.controls {
+    position: center;
+    top: 10px;
+    width: 100%;
+    text-align: center;
+    background: rgba(34, 34, 34, 0.9);
+    padding: 15px 0;
+    z-index: 10;
+}
+
+input[type="number"] {
+    width: 60px;
+    margin: 10px;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.1);
+}
+
+/* Cube Container - Adjusted to 80% of Screen Width & Height */
+.cube-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 50vh;
+    border: 3px solid white; /* Added border */
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding-top: 8vh;
+    padding-bottom: 15vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    gap: 20vw;
+}
+
+/* Cube Wrapper - Perspective for 3D effect */
+.cube-wrapper {
+    width: 84px;  /* Reduced size for each cube */
+    height: 84px;
+    perspective: 800px;
+}
+
+/* Cube Styles */
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    transition: transform 1s ease-in-out;
+}
+
+/* Dice Faces */
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+/* 3D Positioning of Faces - Faces correctly aligned to form a cube */
+.front  { transform: translateZ(42px); }
+.back   { transform: rotateY(180deg) translateZ(42px); }
+.left   { transform: rotateY(-90deg) translateZ(42px); }
+.right  { transform: rotateY(90deg) translateZ(42px); }
+.top    { transform: rotateX(90deg) translateZ(42px); }
+.bottom { transform: rotateX(-90deg) translateZ(42px); }
+
+/* Dice Dots (Pips) - Restored visibility */
+.dice {
+    width: 12px;  /* Adjusted for visibility */
+    height: 12px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* 1 - Center */
+.dot-1 { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+/* 2 - Diagonal */
+.dot-2-1 { top: 20%; left: 20%; }
+.dot-2-2 { bottom: 20%; right: 20%; }
+
+/* 3 - Like 2, plus center */
+.dot-3-1 { top: 20%; left: 20%; }
+.dot-3-2 { bottom: 20%; right: 20%; }
+.dot-3-3 { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+/* 4 - Four corners */
+.dot-4-1 { top: 10%; left: 10%; }
+.dot-4-2 { top: 10%; right: 10%; }
+.dot-4-3 { bottom: 10%; left: 10%; }
+.dot-4-4 { bottom: 10%; right: 10%; }
+
+/* 5 - Four corners + center */
+.dot-5-1 { top: 10%; left: 10%; }
+.dot-5-2 { top: 10%; right: 10%; }
+.dot-5-3 { bottom: 10%; left: 10%; }
+.dot-5-4 { bottom: 10%; right: 10%; }
+.dot-5-5 { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+/* 6 - Three rows */
+.dot-6-1 { top: 10%; left: 10%; }
+.dot-6-2 { top: 10%; right: 10%; }
+.dot-6-3 { bottom: 10%; left: 10%; }
+.dot-6-4 { bottom: 10%; right: 10%; }
+.dot-6-5 { top: 50%; left: 10%; }
+.dot-6-6 { top: 50%; right: 10%; }
